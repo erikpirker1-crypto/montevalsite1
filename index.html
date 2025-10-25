@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monteval – Möbel &amp; Holzkunst</title>
+    <meta
+      name="description"
+      content="Monteval: Möbel &amp; Holzkunst – Wo die Essenz der Natur auf zeitlose Eleganz trifft."
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --bg-alt: #111112;
+        --text-primary: #f8f7f2;
+        --text-secondary: rgba(248, 247, 242, 0.7);
+        --accent: #d8b179;
+        --brand-gold: #d4af37;
+        --surface: rgba(12, 12, 12, 0.74);
+        --surface-border: rgba(216, 177, 121, 0.26);
+        --glow: rgba(216, 177, 121, 0.35);
+        --radius: 28px;
+        --transition: cubic-bezier(0.22, 1, 0.36, 1);
+        --max-width: 760px;
+        --content-width: clamp(320px, 68vw, 620px);
+        --transition: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(120% 120% at 50% 10%, rgba(216, 177, 121, 0.12), transparent 55%),
+          radial-gradient(120% 140% at 10% 90%, rgba(77, 63, 33, 0.25), transparent 65%),
+          var(--bg);
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(2rem, 6vw, 5rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      main {
+        width: min(100%, var(--max-width));
+        padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 2.75rem);
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.75rem, 4vw, 2.5rem);
+        opacity: 0;
+        transition: opacity 4200ms var(--transition);
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .hero {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 1.5rem;
+        max-width: var(--content-width);
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-weight: 400;
+        letter-spacing: clamp(0.28em, 3.6vw, 0.42em);
+        text-transform: uppercase;
+        font-size: clamp(2.6rem, 6vw, 3.8rem);
+        margin: 0;
+        color: var(--brand-gold);
+      }
+
+      .wordmark-sup {
+        display: inline-block;
+        margin-left: clamp(0.045em, 0.6vw, 0.1em);
+        letter-spacing: normal;
+        font-size: clamp(0.44em, 1.8vw, 0.5em);
+        transform: translate(0.08em, -0.82em);
+        font-weight: 400;
+        opacity: 0.82;
+        white-space: nowrap;
+      }
+
+      .subtitle {
+        font-size: clamp(0.7rem, 1.6vw, 0.88rem);
+        text-transform: uppercase;
+        letter-spacing: clamp(0.45em, 3.6vw, 0.58em);
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .tagline {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        max-width: var(--content-width);
+        margin: 0 auto;
+        line-height: 1.3;
+        color: rgba(248, 247, 242, 0.88);
+        font-weight: 300;
+        letter-spacing: clamp(0.05em, 0.6vw, 0.1em);
+        text-transform: none;
+        white-space: nowrap;
+      }
+
+      .cta-group {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        gap: clamp(0.75rem, 2vw, 1.1rem);
+        margin-top: 0.5rem;
+        max-width: var(--content-width);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta {
+        position: relative;
+        display: grid;
+        gap: 0.5rem;
+        padding: clamp(1.05rem, 2.6vw, 1.3rem) clamp(1rem, 2vw, 1.4rem);
+        border-radius: 22px;
+        border: 1px solid rgba(216, 177, 121, 0.22);
+        background: linear-gradient(155deg, rgba(255, 255, 255, 0.05), rgba(9, 9, 9, 0.6));
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        justify-items: center;
+        transition: transform 320ms var(--transition),
+          box-shadow 320ms var(--transition),
+          border-color 320ms ease;
+        isolation: isolate;
+      }
+
+      .cta::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(120deg, rgba(216, 177, 121, 0.18), transparent 55%);
+        opacity: 0;
+        transition: opacity 320ms ease;
+        z-index: -1;
+      }
+
+      .cta:hover,
+      .cta:focus-visible {
+        border-color: rgba(216, 177, 121, 0.45);
+        transform: translateY(-6px);
+        box-shadow: 0 22px 44px rgba(0, 0, 0, 0.48);
+      }
+
+      .cta:hover::after,
+      .cta:focus-visible::after {
+        opacity: 1;
+      }
+
+      .cta:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(216, 177, 121, 0.28), 0 22px 44px rgba(0, 0, 0, 0.48);
+      }
+
+      .cta__icon {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+      }
+
+      .cta__icon svg {
+        width: 26px;
+        height: 26px;
+        fill: none;
+        stroke: var(--text-primary);
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cta__label {
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.76rem;
+        color: var(--text-secondary);
+      }
+
+      footer {
+        position: fixed;
+        bottom: clamp(1.5rem, 5vw, 2.4rem);
+        left: clamp(1.5rem, 6vw, 3rem);
+        display: inline-flex;
+        align-items: center;
+        gap: 1.25rem;
+        font-size: 0.8rem;
+        color: rgba(248, 247, 242, 0.6);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 4200ms var(--transition);
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .legal-links {
+        display: inline-flex;
+        gap: 1rem;
+      }
+
+      .legal-links a {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+        transition: color 240ms ease;
+      }
+
+      .legal-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 240ms ease;
+      }
+
+      .legal-links a:hover::after,
+      .legal-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .legal-links a:focus-visible {
+        outline: none;
+        color: var(--text-primary);
+      }
+
+      .legal-links a:hover {
+        color: var(--text-primary);
+      }
+
+      .legal-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      body.page-visible main {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      body.page-visible footer {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .intro {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.96);
+        backdrop-filter: blur(24px);
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: opacity 4200ms ease, visibility 4200ms ease;
+      }
+
+      .intro::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(120% 120% at 50% 40%, rgba(212, 175, 55, 0.12), transparent 74%);
+        filter: blur(36px);
+        pointer-events: none;
+        transition: opacity 3400ms ease;
+      }
+
+      .intro__logo {
+        display: inline-block;
+        font-family: "Cinzel", "Times New Roman", serif;
+        font-weight: 400;
+        font-size: clamp(1.9rem, 5vw, 2.5rem);
+        letter-spacing: clamp(0.28em, 3.8vw, 0.46em);
+        text-transform: uppercase;
+        transform: scale(0.82);
+        animation: logo-pop 3.8s var(--transition) forwards;
+        color: var(--brand-gold);
+      }
+
+      .intro__glow {
+        position: absolute;
+        width: clamp(280px, 60vw, 420px);
+        height: clamp(280px, 60vw, 420px);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.14), transparent 74%);
+        filter: blur(50px);
+        opacity: 0;
+        animation: glow-rise 4.6s ease forwards;
+      }
+
+      .intro.intro--hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .intro.intro--hide::before {
+        opacity: 0;
+      }
+
+      @keyframes logo-pop {
+        0% {
+          transform: scale(0.72);
+          opacity: 0;
+        }
+        45% {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes glow-rise {
+        0% {
+          opacity: 0;
+          transform: scale(0.7);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes title-fade {
+        0% {
+          opacity: 0;
+          letter-spacing: 0.1em;
+        }
+        100% {
+          opacity: 1;
+          letter-spacing: 0.36em;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: clamp(1.5rem, 6vw, 2rem);
+        }
+
+        .cta-group {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+
+        footer {
+          justify-content: center;
+          text-align: center;
+          gap: 0.6rem;
+        }
+
+        .legal-links {
+          gap: 0.9rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro" aria-hidden="true">
+      <div class="intro__glow"></div>
+      <div class="intro__logo">Monteval<span class="wordmark-sup">™</span></div>
+    </div>
+
+    <main>
+      <section class="hero" aria-label="Monteval Markenauftritt">
+        <h1>Monteval<span class="wordmark-sup">™</span></h1>
+        <p class="subtitle">Möbel &amp; Holzkunst</p>
+        <p class="tagline">„Wo die Essenz der Natur auf zeitlose Eleganz trifft.“</p>
+        <nav class="cta-group" aria-label="Kontakt und soziale Kanäle">
+          <a class="cta" href="mailto:studio@monteval.de" aria-label="E-Mail an Monteval">
+            <span class="cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 6h18v12H3z" />
+                <path d="m3 7.5 9 6 9-6" />
+              </svg>
+            </span>
+            <span class="cta__label">Mail</span>
+          </a>
+          <a class="cta" href="https://www.instagram.com/monteval" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="5" />
+                <circle cx="12" cy="12" r="3.4" />
+                <circle cx="17.2" cy="6.8" r="0.8" />
+              </svg>
+            </span>
+            <span class="cta__label">Instagram</span>
+          </a>
+          <a class="cta" href="https://www.tiktok.com/@monteval" target="_blank" rel="noopener" aria-label="TikTok">
+            <span class="cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M15 3c0 2.5 1.7 4.5 4 4.9v3.2c-1.1 0-2.2-0.3-3.2-0.8v4.9c0 2.9-2.2 5.2-5 5.3-2.5 0.1-4.8-1.8-5.1-4.4-0.3-2.9 2-5.3 4.8-5.3 0.5 0 0.9 0 1.3 0.2V8.1c-0.4-0.1-0.9-0.1-1.3-0.1-4 0-7.2 3.4-6.9 7.4 0.2 3.2 2.8 5.8 6 6.1 3.7 0.3 6.9-2.5 7-6.1V3h-1.6z" />
+              </svg>
+            </span>
+            <span class="cta__label">TikTok</span>
+          </a>
+          <a class="cta" href="https://www.youtube.com/@monteval" target="_blank" rel="noopener" aria-label="YouTube">
+            <span class="cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M21.5 8.2c-0.1-1.2-1-2.2-2.2-2.3C17.1 5.5 12 5.5 12 5.5s-5.1 0-7.3 0.4c-1.2 0.1-2.1 1.1-2.2 2.3C2.2 9.4 2 10.9 2 12s0.2 2.6 0.5 3.8c0.1 1.2 1 2.2 2.2 2.3 2.2 0.4 7.3 0.4 7.3 0.4s5.1 0 7.3-0.4c1.2-0.1 2.1-1.1 2.2-2.3 0.3-1.2 0.5-2.7 0.5-3.8s-0.2-2.6-0.5-3.8z" />
+                <path d="M10 9.75 14.5 12 10 14.25z" />
+              </svg>
+            </span>
+            <span class="cta__label">YouTube</span>
+          </a>
+        </nav>
+      </section>
+
+      <footer>
+        <span class="legal-meta">© <span id="year"></span> Monteval</span>
+        <span class="legal-links" aria-label="Rechtliche Hinweise">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutzerklärung</a>
+        </span>
+      </footer>
+    </main>
+
+    <script>
+      const yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      const intro = document.querySelector(".intro");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const showPage = () => {
+        document.body.classList.add("page-visible");
+      };
+
+      if (intro) {
+        const removeIntro = () => {
+          intro.classList.add("intro--hide");
+          intro.addEventListener(
+            "transitionend",
+            (event) => {
+              if (event.propertyName === "opacity") {
+                intro.remove();
+              }
+            },
+            { once: true }
+          );
+          window.setTimeout(() => {
+            document.body.classList.add("page-ready");
+          }, 800);
+          window.setTimeout(showPage, 1600);
+        };
+
+        if (prefersReducedMotion) {
+          intro.remove();
+          showPage();
+        } else {
+          window.addEventListener("load", () => {
+            window.setTimeout(removeIntro, 4800);
+          });
+        }
+      } else {
+        showPage();
+      }
+    </script>
+  </body>
+</html>
+

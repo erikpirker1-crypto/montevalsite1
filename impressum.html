@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impressum · Monteval</title>
+    <meta
+      name="description"
+      content="Impressum von Monteval – Möbel & Holzkunst."
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --text-primary: #f8f7f2;
+        --text-secondary: rgba(248, 247, 242, 0.7);
+        --accent: #d8b179;
+        --surface: rgba(12, 12, 12, 0.78);
+        --surface-border: rgba(216, 177, 121, 0.25);
+        --radius: 26px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(120% 120% at 50% 10%, rgba(216, 177, 121, 0.15), transparent 55%),
+          var(--bg);
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1.5rem, 6vw, 4rem);
+      }
+
+      main {
+        width: min(100%, 720px);
+        background: var(--surface);
+        border-radius: var(--radius);
+        border: 1px solid var(--surface-border);
+        padding: clamp(2.2rem, 6vw, 3.6rem);
+        backdrop-filter: blur(24px) saturate(140%);
+        box-shadow: 0 36px 100px rgba(0, 0, 0, 0.58);
+        display: grid;
+        gap: clamp(1.6rem, 4vw, 2.2rem);
+      }
+
+      header {
+        display: grid;
+        gap: 0.8rem;
+        text-align: center;
+      }
+
+      .brand {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        align-items: center;
+      }
+
+      .brand img {
+        width: clamp(120px, 20vw, 160px);
+        height: auto;
+        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+      }
+
+      h1 {
+        font-family: "Playfair Display", "Times New Roman", serif;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.75;
+        color: var(--text-secondary);
+      }
+
+      address {
+        font-style: normal;
+        line-height: 1.7;
+        color: var(--text-secondary);
+      }
+
+      .legal-block {
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .label {
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.8rem;
+        color: rgba(248, 247, 242, 0.6);
+      }
+
+      a {
+        color: var(--text-primary);
+        text-decoration: none;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.1rem;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 240ms ease;
+      }
+
+      a:hover::after,
+      a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      a:focus-visible {
+        outline: none;
+        color: var(--accent);
+      }
+
+      .back-link {
+        justify-self: start;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: rgba(248, 247, 242, 0.7);
+      }
+
+      .back-link svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        fill: none;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: clamp(1.25rem, 7vw, 2rem);
+        }
+
+        main {
+          padding: clamp(1.8rem, 7vw, 2.4rem);
+        }
+
+        h1 {
+          letter-spacing: 0.22em;
+          font-size: clamp(1.7rem, 6vw, 2.1rem);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m15 6-6 6 6 6" />
+        </svg>
+        Zurück zur Startseite
+      </a>
+
+      <header>
+        <div class="brand">
+          <img src="montevallogo.jpeg" alt="Monteval Logo" loading="lazy" />
+          <span class="label">Möbel &amp; Holzkunst</span>
+        </div>
+        <h1>Impressum</h1>
+      </header>
+
+      <section class="legal-block">
+        <div>
+          <span class="label">Verantwortlich gemäß § 5 TMG</span>
+          <address>
+            Monteval<br />
+            Musterstraße 12<br />
+            12345 Berlin<br />
+            Deutschland
+          </address>
+        </div>
+
+        <div>
+          <span class="label">Kontakt</span>
+          <p>
+            Telefon: +49 (0)30 12345678<br />
+            E-Mail: <a href="mailto:studio@monteval.de">studio@monteval.de</a><br />
+            Alternativ: <a href="mailto:kontakt@monteval.de">kontakt@monteval.de</a>
+          </p>
+        </div>
+
+        <div>
+          <span class="label">Vertretungsberechtigte</span>
+          <p>Monteval Geschäftsführung</p>
+        </div>
+
+        <div>
+          <span class="label">Umsatzsteuer-ID</span>
+          <p>DE000000000 (bitte anpassen)</p>
+        </div>
+
+        <div>
+          <span class="label">Inhaltlich Verantwortlich</span>
+          <p>Monteval Geschäftsführung, Anschrift wie oben</p>
+        </div>
+      </section>
+
+      <p class="label">© <span id="year"></span> Monteval</p>
+    </main>
+
+    <script>
+      const yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>
+
