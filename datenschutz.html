@@ -52,19 +52,14 @@
 
       main {
         width: min(100%, 760px);
-        background: var(--surface);
-        border-radius: var(--radius);
-        border: 1px solid var(--surface-border);
         padding: clamp(2.2rem, 6vw, 3.6rem);
-        backdrop-filter: blur(24px) saturate(140%);
-        box-shadow: 0 36px 100px rgba(0, 0, 0, 0.58);
         display: grid;
         gap: clamp(1.4rem, 3.5vw, 2.2rem);
       }
 
       header {
         display: grid;
-        gap: 0.8rem;
+        gap: 1.5rem;
         text-align: center;
       }
 
@@ -86,13 +81,16 @@
         font-weight: 600;
         letter-spacing: 0.26em;
         text-transform: uppercase;
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
         margin: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
       }
 
       h2 {
         font-family: "Playfair Display", "Times New Roman", serif;
-        font-size: clamp(1.3rem, 3vw, 1.6rem);
+        font-size: clamp(1.0rem, 2vw, 1.3rem);
         letter-spacing: 0.12em;
         text-transform: uppercase;
         margin: 0;
@@ -102,6 +100,10 @@
         margin: 0;
         line-height: 1.75;
         color: var(--text-secondary);
+        font-size: 0.8rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
       }
 
       ul {
@@ -114,6 +116,9 @@
 
       li {
         line-height: 1.6;
+        font-size: 0.8rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       .label {
@@ -176,18 +181,61 @@
         fill: none;
       }
 
+      @media (max-width: 768px) {
+        main {
+          max-width: 95vw;
+          padding: clamp(1.8rem, 5vw, 2.4rem);
+        }
+      }
+
       @media (max-width: 600px) {
         body {
-          padding: clamp(1.25rem, 7vw, 2rem);
+          padding: clamp(0.75rem, 3vw, 1.25rem);
         }
 
         main {
-          padding: clamp(1.8rem, 7vw, 2.4rem);
+          padding: clamp(1.2rem, 4vw, 1.8rem);
+          max-width: 92vw;
+          place-self: center;
         }
 
         h1 {
           letter-spacing: 0.22em;
           font-size: clamp(1.6rem, 6vw, 2.1rem);
+        }
+      }
+
+      @media (max-width: 500px) {
+        main {
+          max-width: 88vw;
+          padding: clamp(1rem, 3.5vw, 1.5rem);
+        }
+
+        h2 {
+          font-size: clamp(0.95rem, 4.5vw, 1.15rem);
+        }
+
+        p, li {
+          font-size: 0.75rem;
+        }
+      }
+
+      @media (max-width: 350px) {
+        main {
+          max-width: 85vw;
+          padding: clamp(0.8rem, 3vw, 1.2rem);
+        }
+
+        h1 {
+          font-size: clamp(1.4rem, 5.5vw, 1.8rem);
+        }
+
+        h2 {
+          font-size: clamp(0.9rem, 4vw, 1.1rem);
+        }
+
+        p, li {
+          font-size: 0.7rem;
         }
       }
 
@@ -214,8 +262,7 @@
 
       <header>
         <div class="brand">
-          <img src="montevallogo.jpeg" alt="Monteval Logo" loading="lazy" />
-          <span class="label">Möbel &amp; Holzkunst</span>
+          <img src="montevallogoround.png" alt="Monteval Logo" loading="lazy" />
         </div>
         <h1>Datenschutzerklärung</h1>
       </header>
@@ -297,4 +344,3 @@
     </script>
   </body>
 </html>
-

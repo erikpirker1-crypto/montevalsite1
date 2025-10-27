@@ -52,19 +52,14 @@
 
       main {
         width: min(100%, 720px);
-        background: var(--surface);
-        border-radius: var(--radius);
-        border: 1px solid var(--surface-border);
         padding: clamp(2.2rem, 6vw, 3.6rem);
-        backdrop-filter: blur(24px) saturate(140%);
-        box-shadow: 0 36px 100px rgba(0, 0, 0, 0.58);
         display: grid;
         gap: clamp(1.6rem, 4vw, 2.2rem);
       }
 
       header {
         display: grid;
-        gap: 0.8rem;
+        gap: 1.5rem;
         text-align: center;
       }
 
@@ -86,7 +81,7 @@
         font-weight: 600;
         letter-spacing: 0.28em;
         text-transform: uppercase;
-        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
         margin: 0;
       }
 
@@ -94,12 +89,14 @@
         margin: 0;
         line-height: 1.75;
         color: var(--text-secondary);
+        font-size: 0.8rem;
       }
 
       address {
         font-style: normal;
         line-height: 1.7;
         color: var(--text-secondary);
+        font-size: 0.8rem;
       }
 
       .legal-block {
@@ -200,46 +197,56 @@
 
       <header>
         <div class="brand">
-          <img src="montevallogo.jpeg" alt="Monteval Logo" loading="lazy" />
-          <span class="label">Möbel &amp; Holzkunst</span>
+          <img src="montevallogoround.png" alt="Monteval Logo" loading="lazy" />
         </div>
         <h1>Impressum</h1>
       </header>
 
       <section class="legal-block">
-        <div>
-          <span class="label">Verantwortlich gemäß § 5 TMG</span>
-          <address>
-            Monteval<br />
-            Musterstraße 12<br />
-            12345 Berlin<br />
-            Deutschland
-          </address>
-        </div>
+        <p>
+          <strong>Impressum – Monteval</strong>
+        </p>
 
-        <div>
-          <span class="label">Kontakt</span>
-          <p>
-            Telefon: +49 (0)30 12345678<br />
-            E-Mail: <a href="mailto:studio@monteval.de">studio@monteval.de</a><br />
-            Alternativ: <a href="mailto:kontakt@monteval.de">kontakt@monteval.de</a>
-          </p>
-        </div>
+        <p>
+          <strong>Monteval</strong><br />
+          Inhaber: Erik Pirker<br />
+          Rübezahlstraße 1<br />
+          92670 Windischeschenbach<br />
+          Deutschland
+        </p>
 
-        <div>
-          <span class="label">Vertretungsberechtigte</span>
-          <p>Monteval Geschäftsführung</p>
-        </div>
+        <p>
+          Telefon: +491716496291<br />
+          E-Mail: <a href="mailto:kontakt@monteval.de">kontakt@monteval.de</a>
+        </p>
 
-        <div>
-          <span class="label">Umsatzsteuer-ID</span>
-          <p>DE000000000 (bitte anpassen)</p>
-        </div>
+        <p>
+          Zuständiges Finanzamt: Weiden i.d.OPf.<br />
+          Steuernummer: 255/258/60194
+        </p>
 
-        <div>
-          <span class="label">Inhaltlich Verantwortlich</span>
-          <p>Monteval Geschäftsführung, Anschrift wie oben</p>
-        </div>
+        <p>
+          Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.
+        </p>
+
+        <p>
+          <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong>
+        </p>
+
+        <p>
+          Erik Pirker<br />
+          Rübezahlstraße 1<br />
+          92670 Windischeschenbach
+        </p>
+
+        <p>
+          <strong>Online-Streitbeilegung gemäß Art. 14 Abs. 1 ODR-VO:</strong>
+        </p>
+
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die unter <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a> abrufbar ist.<br />
+          Ich bin nicht verpflichtet und grundsätzlich nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
       </section>
 
       <p class="label">© <span id="year"></span> Monteval</p>
@@ -253,4 +260,3 @@
     </script>
   </body>
 </html>
-

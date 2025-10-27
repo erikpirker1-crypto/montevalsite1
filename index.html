@@ -69,7 +69,7 @@
         flex-direction: column;
         gap: clamp(1.75rem, 4vw, 2.5rem);
         opacity: 0;
-        transition: opacity 4200ms var(--transition);
+        transition: opacity 2000ms var(--transition);
         pointer-events: none;
         visibility: hidden;
       }
@@ -92,17 +92,36 @@
         font-size: clamp(2.6rem, 6vw, 3.8rem);
         margin: 0;
         color: var(--brand-gold);
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .monteval-text {
+        position: relative;
+      }
+
+      .monteval-text::after {
+        content: "™";
+        position: absolute;
+        right: -12px;
+        top: -6px;
+        font-size: clamp(0.44em, 1.8vw, 0.5em);
+        font-weight: 400;
+        opacity: 0.82;
+        letter-spacing: normal;
+        font-family: "Cinzel", "Times New Roman", serif;
+        color: var(--brand-gold);
       }
 
       .wordmark-sup {
-        display: inline-block;
-        margin-left: clamp(0.045em, 0.6vw, 0.1em);
-        letter-spacing: normal;
+        position: absolute;
+        right: -12px;
+        top: -6px;
         font-size: clamp(0.44em, 1.8vw, 0.5em);
-        transform: translate(0.08em, -0.82em);
         font-weight: 400;
         opacity: 0.82;
-        white-space: nowrap;
+        letter-spacing: normal;
       }
 
       .subtitle {
@@ -122,7 +141,8 @@
         font-weight: 300;
         letter-spacing: clamp(0.05em, 0.6vw, 0.1em);
         text-transform: none;
-        white-space: nowrap;
+        white-space: normal;
+        text-align: center;
       }
 
       .cta-group {
@@ -209,19 +229,25 @@
       footer {
         position: fixed;
         bottom: clamp(1.5rem, 5vw, 2.4rem);
-        left: clamp(1.5rem, 6vw, 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100%, var(--max-width));
+        max-width: calc(100vw - 3rem);
         display: inline-flex;
         align-items: center;
+        justify-content: space-between;
         gap: 1.25rem;
-        font-size: 0.8rem;
+        padding: 0 clamp(1.5rem, 4vw, 2rem);
+        font-size: 0.6rem;
         color: rgba(248, 247, 242, 0.6);
         letter-spacing: 0.12em;
         text-transform: uppercase;
         z-index: 2;
         opacity: 0;
-        transition: opacity 4200ms var(--transition);
+        transition: opacity 2000ms var(--transition);
         pointer-events: none;
         visibility: hidden;
+        box-sizing: border-box;
       }
 
       .legal-links {
@@ -292,7 +318,7 @@
         align-items: center;
         justify-content: center;
         z-index: 10;
-        transition: opacity 4200ms ease, visibility 4200ms ease;
+        transition: opacity 2000ms ease, visibility 2000ms ease;
       }
 
       .intro::before {
@@ -306,15 +332,9 @@
       }
 
       .intro__logo {
-        display: inline-block;
-        font-family: "Cinzel", "Times New Roman", serif;
-        font-weight: 400;
-        font-size: clamp(1.9rem, 5vw, 2.5rem);
-        letter-spacing: clamp(0.28em, 3.8vw, 0.46em);
-        text-transform: uppercase;
-        transform: scale(0.82);
-        animation: logo-pop 3.8s var(--transition) forwards;
-        color: var(--brand-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .intro__glow {
@@ -325,7 +345,7 @@
         background: radial-gradient(circle, rgba(212, 175, 55, 0.14), transparent 74%);
         filter: blur(50px);
         opacity: 0;
-        animation: glow-rise 4.6s ease forwards;
+        animation: glow-rise 2s ease forwards;
       }
 
       .intro.intro--hide {
@@ -346,8 +366,13 @@
           transform: scale(1.08);
           opacity: 1;
         }
+        70% {
+          transform: scale(1);
+          opacity: 1;
+        }
         100% {
           transform: scale(1);
+          opacity: 0;
         }
       }
 
@@ -356,9 +381,12 @@
           opacity: 0;
           transform: scale(0.7);
         }
-        100% {
+        45% {
           opacity: 1;
-          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.8);
         }
       }
 
@@ -383,8 +411,7 @@
         }
 
         footer {
-          justify-content: center;
-          text-align: center;
+          flex-direction: column;
           gap: 0.6rem;
         }
 
@@ -408,23 +435,25 @@
   <body>
     <div class="intro" aria-hidden="true">
       <div class="intro__glow"></div>
-      <div class="intro__logo">Monteval<span class="wordmark-sup">™</span></div>
+      <div class="intro__logo">
+        <img src="montevallogoround.png" alt="Monteval Logo" style="width: clamp(180px, 40vw, 280px); height: auto; transform: scale(0.82); animation: logo-pop 2s var(--transition) forwards;">
+      </div>
     </div>
 
     <main>
       <section class="hero" aria-label="Monteval Markenauftritt">
-        <h1>Monteval<span class="wordmark-sup">™</span></h1>
+        <h1><span class="monteval-text">MONTEVAL</span></h1>
         <p class="subtitle">Möbel &amp; Holzkunst</p>
         <p class="tagline">„Wo die Essenz der Natur auf zeitlose Eleganz trifft.“</p>
         <nav class="cta-group" aria-label="Kontakt und soziale Kanäle">
-          <a class="cta" href="mailto:studio@monteval.de" aria-label="E-Mail an Monteval">
+          <a class="cta" href="mailto:kontakt@monteval.de" aria-label="E-Mail an Monteval">
             <span class="cta__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M3 6h18v12H3z" />
                 <path d="m3 7.5 9 6 9-6" />
               </svg>
             </span>
-            <span class="cta__label">Mail</span>
+            <span class="cta__label">Kontakt</span>
           </a>
           <a class="cta" href="https://www.instagram.com/monteval" target="_blank" rel="noopener" aria-label="Instagram">
             <span class="cta__icon" aria-hidden="true">
@@ -481,6 +510,8 @@
       if (intro) {
         const removeIntro = () => {
           intro.classList.add("intro--hide");
+          // Start showing page content before intro fully fades
+          showPage();
           intro.addEventListener(
             "transitionend",
             (event) => {
@@ -490,10 +521,6 @@
             },
             { once: true }
           );
-          window.setTimeout(() => {
-            document.body.classList.add("page-ready");
-          }, 800);
-          window.setTimeout(showPage, 1600);
         };
 
         if (prefersReducedMotion) {
@@ -501,7 +528,7 @@
           showPage();
         } else {
           window.addEventListener("load", () => {
-            window.setTimeout(removeIntro, 4800);
+            window.setTimeout(removeIntro, 2000);
           });
         }
       } else {
@@ -510,4 +537,3 @@
     </script>
   </body>
 </html>
-
