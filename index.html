@@ -47,15 +47,16 @@
       body {
         margin: 0;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: radial-gradient(120% 120% at 50% 10%, rgba(216, 177, 121, 0.12), transparent 55%),
           radial-gradient(120% 140% at 10% 90%, rgba(77, 63, 33, 0.25), transparent 65%),
           var(--bg);
         color: var(--text-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(2rem, 6vw, 5rem);
+        padding: 0;
         position: relative;
         overflow: hidden;
       }
@@ -82,6 +83,21 @@
         gap: 1.5rem;
         max-width: var(--content-width);
         margin: 0 auto;
+      }
+
+      .logo-container {
+        position: fixed;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
+      body.page-visible .logo-container {
+        opacity: 1;
       }
 
       h1 {
@@ -299,6 +315,7 @@
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
+        margin-top: clamp(8rem, 20vh, 10rem);
       }
 
       body.page-visible footer {
@@ -419,7 +436,7 @@
         }
 
         .cta-group {
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          grid-template-columns: 1fr;
         }
 
         footer {
@@ -452,10 +469,12 @@
       </div>
     </div>
 
+    <div class="logo-container">
+      <img src="monte.png" alt="Monteval Logo" style="width: clamp(200px, 40vw, 400px); height: auto; display: block;">
+    </div>
+
     <main>
       <section class="hero" aria-label="Monteval Markenauftritt">
-        <h1><span class="monteval-text">MONTEVAL</span></h1>
-        <p class="subtitle">Möbel &amp; Holzkunst</p>
         <p class="tagline">„Wo die Essenz der Natur auf zeitlose Eleganz trifft.“</p>
         <nav class="cta-group" aria-label="Kontakt und soziale Kanäle">
           <a class="cta" href="mailto:kontakt@monteval.de" aria-label="E-Mail an Monteval">
