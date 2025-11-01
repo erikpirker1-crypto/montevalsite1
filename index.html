@@ -315,7 +315,7 @@
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
-        margin-top: clamp(8rem, 20vh, 10rem);
+        margin-top: clamp(6rem, 15vh, 8rem);
       }
 
       body.page-visible footer {
@@ -435,8 +435,13 @@
           font-size: clamp(0.76rem, 1.6vw, 0.88rem);
         }
 
+        .tagline-break {
+          display: block;
+        }
+
         .cta-group {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: clamp(0.75rem, 4vw, 1rem);
         }
 
         footer {
@@ -475,7 +480,9 @@
 
     <main>
       <section class="hero" aria-label="Monteval Markenauftritt">
-        <p class="tagline">„Wo die Essenz der Natur auf zeitlose Eleganz trifft.“</p>
+        <p class="tagline">
+          <span class="tagline-line1">„Wo die Essenz der Natur auf</span><span class="tagline-break"> </span><span class="tagline-line2">zeitlose Eleganz trifft."</span>
+        </p>
         <nav class="cta-group" aria-label="Kontakt und soziale Kanäle">
           <a class="cta" href="mailto:kontakt@monteval.de" aria-label="E-Mail an Monteval">
             <span class="cta__icon" aria-hidden="true">
