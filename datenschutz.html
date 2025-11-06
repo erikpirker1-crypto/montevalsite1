@@ -8,6 +8,9 @@
       name="description"
       content="Datenschutzerklärung von Monteval – Möbel & Holzkunst."
     />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Google Fonts -->
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -18,241 +21,14 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #050505;
-        --text-primary: #f8f7f2;
-        --text-secondary: rgba(248, 247, 242, 0.7);
-        --accent: #d8b179;
-        --surface: rgba(12, 12, 12, 0.78);
-        --surface-border: rgba(216, 177, 121, 0.25);
-        --radius: 26px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(140% 140% at 50% 0%, rgba(216, 177, 121, 0.18), transparent 60%),
-          var(--bg);
-        color: var(--text-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(1.5rem, 6vw, 4rem);
-      }
-
-      main {
-        width: min(100%, 760px);
-        padding: clamp(2.2rem, 6vw, 3.6rem);
-        display: grid;
-        gap: clamp(1.4rem, 3.5vw, 2.2rem);
-      }
-
-      header {
-        display: grid;
-        gap: 1.5rem;
-        text-align: center;
-      }
-
-      .brand {
-        display: inline-flex;
-        flex-direction: column;
-        gap: 0.35rem;
-        align-items: center;
-      }
-
-      .brand img {
-        width: clamp(120px, 20vw, 160px);
-        height: auto;
-        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
-      }
-
-      h1 {
-        font-family: "Playfair Display", "Times New Roman", serif;
-        font-weight: 600;
-        letter-spacing: 0.26em;
-        text-transform: uppercase;
-        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-        margin: 0;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-      }
-
-      h2 {
-        font-family: "Playfair Display", "Times New Roman", serif;
-        font-size: clamp(1.0rem, 2vw, 1.3rem);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin: 0;
-      }
-
-      p {
-        margin: 0;
-        line-height: 1.75;
-        color: var(--text-secondary);
-        font-size: 0.8rem;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-      }
-
-      ul {
-        margin: 0;
-        padding-left: 1.1rem;
-        display: grid;
-        gap: 0.6rem;
-        color: var(--text-secondary);
-      }
-
-      li {
-        line-height: 1.6;
-        font-size: 0.8rem;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-
-      .label {
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-size: 0.76rem;
-        color: rgba(248, 247, 242, 0.6);
-      }
-
-      .section {
-        display: grid;
-        gap: 0.8rem;
-      }
-
-      a {
-        color: var(--text-primary);
-        text-decoration: none;
-        position: relative;
-      }
-
-      a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -0.1rem;
-        width: 100%;
-        height: 1px;
-        background: currentColor;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 240ms ease;
-      }
-
-      a:hover::after,
-      a:focus-visible::after {
-        transform: scaleX(1);
-      }
-
-      a:focus-visible {
-        outline: none;
-        color: var(--accent);
-      }
-
-      .back-link {
-        justify-self: start;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        color: rgba(248, 247, 242, 0.7);
-      }
-
-      .back-link svg {
-        width: 18px;
-        height: 18px;
-        stroke: currentColor;
-        stroke-width: 1.5;
-        fill: none;
-      }
-
-      @media (max-width: 768px) {
-        main {
-          max-width: 95vw;
-          padding: clamp(1.8rem, 5vw, 2.4rem);
-        }
-      }
-
-      @media (max-width: 600px) {
-        body {
-          padding: clamp(0.75rem, 3vw, 1.25rem);
-        }
-
-        main {
-          padding: clamp(1.2rem, 4vw, 1.8rem);
-          max-width: 92vw;
-          place-self: center;
-        }
-
-        h1 {
-          letter-spacing: 0.22em;
-          font-size: clamp(1.6rem, 6vw, 2.1rem);
-        }
-      }
-
-      @media (max-width: 500px) {
-        main {
-          max-width: 88vw;
-          padding: clamp(1rem, 3.5vw, 1.5rem);
-        }
-
-        h2 {
-          font-size: clamp(0.95rem, 4.5vw, 1.15rem);
-        }
-
-        p, li {
-          font-size: 0.75rem;
-        }
-      }
-
-      @media (max-width: 350px) {
-        main {
-          max-width: 85vw;
-          padding: clamp(0.8rem, 3vw, 1.2rem);
-        }
-
-        h1 {
-          font-size: clamp(1.4rem, 5.5vw, 1.8rem);
-        }
-
-        h2 {
-          font-size: clamp(0.9rem, 4vw, 1.1rem);
-        }
-
-        p, li {
-          font-size: 0.7rem;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <main>
+  <body class="legal-page">
+    <main class="legal-main">
       <a class="back-link" href="/">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="m15 6-6 6 6 6" />
@@ -260,14 +36,14 @@
         Zurück zur Startseite
       </a>
 
-      <header>
-        <div class="brand">
+      <header class="legal-header">
+        <div class="legal-brand">
           <img src="montevallogoround.png" alt="Monteval Logo" loading="lazy" />
         </div>
         <h1>Datenschutzerklärung</h1>
       </header>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>1. Verantwortlicher</h2>
         <p>
           Monteval – Erik Pirker<br />
@@ -280,14 +56,14 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>2. Allgemeine Hinweise</h2>
         <p>
           Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Website dient ausschließlich der Information über die Marke Monteval. Es werden keine personenbezogenen Daten aktiv erhoben oder zu Analysezwecken verarbeitet.
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>3. Zugriffsdaten (Server-Logfiles)</h2>
         <p>
           Beim Aufruf dieser Website erfasst der Hosting-Anbieter Vercel Inc.,<br />
@@ -318,7 +94,7 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>4. Kontaktaufnahme per E-Mail</h2>
         <p>
           Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (E-Mail-Adresse, Inhalt, ggf. Signaturdaten) verarbeitet, um Ihre Anfrage zu beantworten.<br />
@@ -327,14 +103,14 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>5. Cookies und Analyse</h2>
         <p>
           Auf dieser Website werden keine Cookies gesetzt und keine Tracking- oder Analysetools verwendet.
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>6. Externe Links</h2>
         <p>
           Diese Website enthält Links zu externen Plattformen (z. B. Instagram, TikTok, YouTube). Beim Anklicken solcher Links werden Sie auf die jeweilige externe Seite weitergeleitet. Dort gelten die Datenschutzbestimmungen des jeweiligen Anbieters.<br />
@@ -342,7 +118,7 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>7. Ihre Rechte</h2>
         <p>
           Sie haben gemäß DSGVO folgende Rechte:
@@ -361,14 +137,14 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="legal-section">
         <h2>8. Änderungen dieser Datenschutzerklärung</h2>
         <p>
           Wir behalten uns vor, diese Datenschutzerklärung anzupassen, sobald Änderungen an der Website oder an rechtlichen Vorgaben dies erforderlich machen.
         </p>
       </section>
 
-      <p class="label">Stand: 02. November 2025</p>
+      <p class="legal-label">Stand: 02. November 2025</p>
     </main>
 
 
