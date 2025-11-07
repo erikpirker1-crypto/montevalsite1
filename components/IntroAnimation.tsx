@@ -60,10 +60,10 @@ export default function IntroAnimation() {
         <Image
           src="/montevallogoround.png"
           alt="Monteval Logo"
-          width={560}
-          height={560}
+          width={280}
+          height={280}
           priority
-          className="w-[clamp(360px,80vw,560px)] h-auto scale-[0.82]"
+          className="w-[clamp(180px,40vw,280px)] h-auto scale-[0.82]"
           style={{
             animation: "logo-pop 2s var(--transition) forwards",
           }}
