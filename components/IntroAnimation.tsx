@@ -63,7 +63,7 @@ export default function IntroAnimation() {
           width={280}
           height={280}
           priority
-          className="w-[clamp(180px,40vw,280px)] h-auto scale-[0.82]"
+          className="w-[clamp(180px,40vw,280px)] h-auto scale-[1.23]"
           style={{
             animation: "logo-pop 2s var(--transition) forwards",
           }}

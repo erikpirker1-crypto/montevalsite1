@@ -26,14 +26,14 @@ export default function Home() {
     <div className={`flex flex-col items-center justify-center min-h-screen relative overflow-hidden ${pageVisible ? 'page-visible' : ''}`}>
       <IntroAnimation />
 
-      <div className="fixed top-8 left-1/2 -translate-x-1/2 z-10 text-center opacity-0 transition-opacity duration-[400ms] [.page-visible_&]:opacity-100">
+      <div className="fixed top-8 left-1/2 -translate-x-1/2 z-10 text-center opacity-0 transition-opacity duration-[400ms] max-sm:px-4 [.page-visible_&]:opacity-100">
         <Image
           src="/monte.png"
           alt="Monteval Logo"
           width={800}
           height={200}
           priority
-          className="w-[clamp(400px,80vw,800px)] h-auto block"
+          className="w-[clamp(400px,80vw,800px)] max-sm:scale-200 h-auto block"
         />
       </div>
 

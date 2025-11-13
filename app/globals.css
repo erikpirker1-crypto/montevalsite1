@@ -74,6 +74,12 @@ body {
   }
 }
 
+@media (max-width: 639px) {
+  body {
+    overflow-x: visible;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
